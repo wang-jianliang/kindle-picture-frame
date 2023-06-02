@@ -1,6 +1,6 @@
 // inner variables
 var canvas, ctx;
-var clockRadius = 250;
+var clockRadius = 350;
 var clockImage;
 
 // draw functions :
