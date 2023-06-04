@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
 <title>Digital Clock</title>
 <style>
@@ -24,14 +24,12 @@
   .time {
     font-size: 10em;
     margin-bottom: 0.1em;
-    /* font-family: 'Digital-7 Mono', sans-serif; */
     font-family:'Courier New', monospace
   }
 
   .date {
     font-size: 4em;
     margin-bottom: 2em;
-    /* font-family:'Courier New', monospace */
   }
   img {
     width: 512px;
@@ -55,9 +53,6 @@
 
   function updateClock() {
     const now = new Date();
-    // const hours = 1; // String(now.getHours()).padStart(2, '0');
-    // const minutes = 2; // String(now.getMinutes()).padStart(2, '0');
-    // const seconds = 3; // String(now.getSeconds()).padStart(2, '0');
     var hours = zeroFill(now.getHours().toString(), 2);
     var minutes = zeroFill(now.getMinutes().toString(), 2);
     var seconds = zeroFill(now.getSeconds().toString(), 2);
