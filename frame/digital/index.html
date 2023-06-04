@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
 <title>Digital Clock</title>
 <style>
   body {
-    background-image: url('../assets/background.jpg');
+    /* background-image: url('../images/background.webp'); */
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -22,14 +22,20 @@
   }
 
   .time {
-    font-size: 15em;
-    margin-bottom: 0.3em;
-    font-family: 'Digital-7 Mono', sans-serif;
+    font-size: 10em;
+    margin-bottom: 0.1em;
+    /* font-family: 'Digital-7 Mono', sans-serif; */
+    font-family:'Courier New', monospace
   }
 
   .date {
-    font-size: 4.8em;
+    font-size: 4em;
+    margin-bottom: 3em;
     font-family:'Courier New', monospace
+  }
+  img {
+    width: 512px;
+    height: 512px;
   }
 </style>
 </head>
@@ -37,6 +43,7 @@
 <div class="clock">
   <div class="time" id="time"></div>
   <div class="date" id="date"></div>
+  <img src="../images/pic.jpeg"></img>
 </div>
 <script>
   function updateClock() {
@@ -46,7 +53,7 @@
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const date = now.toDateString();
 
-    const timeString = `${hours}:${minutes}:${seconds}`;
+    const timeString = hours + ':' + minutes + ':' + seconds;
     document.getElementById('time').textContent = timeString;
     document.getElementById('date').textContent = date;
   }
