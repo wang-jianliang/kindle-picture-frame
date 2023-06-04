@@ -23,6 +23,7 @@
 
   .time {
     font-size: 10em;
+    margin-top: 2em;
     margin-bottom: 0.1em;
     font-family:'Courier New', monospace
   }
@@ -32,9 +33,14 @@
     text-align: center;
     margin-bottom: 2em;
   }
+  .sentence {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
   img {
-    width: 640px;
-    height: 640px;
+    width: 760px;
+    height: 760px;
     display: block;
     margin: 0 auto;
   }
@@ -44,7 +50,8 @@
 <div class="clock">
   <div class="time" id="time"></div>
   <div class="date" id="date"></div>
-  <img src="../images/pic.jpeg"></img>
+  <p class="sentence">{{sentence}}</p>
+  <img src="{{image_path}}"></img>
 </div>
 <script>
   function zeroFill(string, length) {
