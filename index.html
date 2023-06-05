@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
-<title>Digital Clock</title>
-<style>
-  body {
-    /* background-image: url('../images/background.webp'); */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-  }
-
-  .clock {
-    color: #000000;
-  }
-
-  .time {
-    font-size: 10em;
-    margin-top: 0.5em;
-    margin-bottom: 0.1em;
-    font-family:'Courier New', monospace
-  }
-
-  .date {
-    font-size: 4em;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .sentence {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 0.5em;
-  }
-  img {
-    width: 760px;
-    height: 760px;
-    display: block;
-    margin: 0 auto;
-  }
-</style>
-</head>
-<body>
-<div class="clock">
-  <div class="time" id="time"></div>
-  <div class="date" id="date"></div>
-  <p class="sentence">玉阶空伫立，宿鸟归飞急。</p>
-  <img src="images/2023-06-05/1.jpeg"></img>
-</div>
-<script>
-  function zeroFill(string, length) {
-    for (var i = 0, l = length - string.length; i < l; i++) {
-      string = '0' + string;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
+  <title>Digital Clock</title>
+  <style>
+    body {
+      /* background-image: url('../images/background.webp'); */
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      margin: 0;
     }
-    return string;
-  }
 
-  function updateClock() {
-    const now = new Date();
-    var hours = zeroFill(now.getHours().toString(), 2);
-    var minutes = zeroFill(now.getMinutes().toString(), 2);
-    var seconds = zeroFill(now.getSeconds().toString(), 2);
-    const date = now.toDateString();
+    .clock {
+      color: #000000;
+      display: inline-block;
+    }
 
-    const timeString = hours + ':' + minutes + ':' + seconds;
-    document.getElementById('time').textContent = timeString;
-    document.getElementById('date').textContent = date;
-  }
+    .time {
+      font-size: 10em;
+      margin-bottom: 0.1em;
+      font-family: 'Courier New', monospace
+    }
 
-  setInterval(updateClock, 1000);
-  updateClock();
-</script>
+    .date {
+      font-size: 4em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .sentence {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    img {
+      width: 760px;
+      height: 760px;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="time" id="time"></div>
+    <div class="date" id="date"></div>
+    <p class="sentence">玉阶空伫立，宿鸟归飞急。</p>
+    <img src="images/2023-06-05/1.jpeg"></img>
+  </div>
+  <script>
+    function zeroFill(string, length) {
+      for (var i = 0, l = length - string.length; i < l; i++) {
+        string = '0' + string;
+      }
+      return string;
+    }
+
+    function updateClock() {
+      const now = new Date();
+      var hours = zeroFill(now.getHours().toString(), 2);
+      var minutes = zeroFill(now.getMinutes().toString(), 2);
+      var seconds = zeroFill(now.getSeconds().toString(), 2);
+      const date = now.toDateString();
+
+      const timeString = hours + ':' + minutes + ':' + seconds;
+      document.getElementById('time').textContent = timeString;
+      document.getElementById('date').textContent = date;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
+
 </html>
