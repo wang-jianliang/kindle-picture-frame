@@ -5,9 +5,6 @@ on:
   schedule:
     - cron: "0 0,13 * * *"
 
-env:
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
 jobs:
   build:
     name: Update
@@ -30,7 +27,7 @@ jobs:
 
       - name: Update
         run: |
-          python update.py ${{ secrets.BING_COOKIE }}
+          python update.py --bing-cookie ${{ secrets.BING_COOKIE }} --openai-key ${{ secrets.OPENAI_API_KEY }}
 
       - name: Push changes
         run: |

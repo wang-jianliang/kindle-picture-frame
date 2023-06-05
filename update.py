@@ -63,8 +63,11 @@ def build_image_prompt(sentence):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--bing-cookie')
+    parser.add_argument('--openai-key')
     args = parser.parse_args()
 
+    openai.api_key = args.openai_key
+    print(openai.api_key)
     sentence = get_sentence()
     print(f'sentence: {sentence}')
     image_prompt = build_image_prompt(sentence)
