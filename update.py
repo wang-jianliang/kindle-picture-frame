@@ -33,7 +33,7 @@ def generate_image(prompt, bing_cookie):
     if not os.path.exists(new_path):
         os.mkdir(new_path)
     i.save_images(images, new_path)
-    return os.path.join(new_path, str(random.choice(range(5))) + '.jpeg')
+    return os.path.join(new_path, str(random.choice(range(4))) + '.jpeg')
 
 
 def get_sentence():
