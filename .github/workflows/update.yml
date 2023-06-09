@@ -3,7 +3,7 @@ name: Update Daily
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0,13 * * *"
+    - cron: "0 0,12 * * *"
 
 jobs:
   build:
