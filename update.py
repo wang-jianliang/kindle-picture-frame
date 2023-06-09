@@ -28,7 +28,7 @@ def generate_image(prompt, bing_cookie):
     """
     i = ImageGen(bing_cookie)
     images = i.get_images(prompt)
-    date_str = pendulum.now().to_date_string()
+    date_str = pendulum.now().to_w3c_string()
     new_path = os.path.join("images", date_str)
     if not os.path.exists(new_path):
         os.mkdir(new_path)
