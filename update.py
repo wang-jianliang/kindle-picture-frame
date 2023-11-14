@@ -9,7 +9,7 @@ from BingImageCreator import ImageGen
 
 SENTENCE_API = "https://v1.jinrishici.com/all"
 DEFAULT_SENTENCE = "赏花归去马如飞\r\n去马如飞酒力微\r\n酒力微醒时已暮\r\n醒时已暮赏花归\r\n"
-PROMPT = "请帮我把这个句子 `{sentence}` 翻译成英语，请翻译的有诗意一点儿。"
+PROMPT = "请帮根据这句诗 `{sentence}` 描绘的画面生成一份详细的Dalle 3的提示词，用英文回复，回复中只包含Dalle 3的提示词内容。"
 TEMPLATE_PATH = 'templates/digital/index.html'
 
 
@@ -70,8 +70,8 @@ def main():
     print(openai.api_key)
     sentence = get_sentence()
     print(f'sentence: {sentence}')
-    # image_prompt = build_image_prompt(sentence)
-    # print(f'prompt: {image_prompt}')
+    image_prompt = build_image_prompt(sentence)
+    print(f'prompt: {image_prompt}')
     image = generate_image(sentence, args.bing_cookie)
     render_page(sentence=sentence, image_path=image)
 
