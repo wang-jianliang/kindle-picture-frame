@@ -1,6 +1,6 @@
 requests
 pendulum
 rich
-openai
+openai==0.27.2
 BingImageCreator==0.4.4
 
