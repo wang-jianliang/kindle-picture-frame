@@ -70,9 +70,9 @@ def main():
     print(openai.api_key)
     sentence = get_sentence()
     print(f'sentence: {sentence}')
-    image_prompt = build_image_prompt(sentence)
-    print(f'prompt: {image_prompt}')
-    image = generate_image(image_prompt, args.bing_cookie)
+    # image_prompt = build_image_prompt(sentence)
+    # print(f'prompt: {image_prompt}')
+    image = generate_image(sentence, args.bing_cookie)
     render_page(sentence=sentence, image_path=image)
 
 
